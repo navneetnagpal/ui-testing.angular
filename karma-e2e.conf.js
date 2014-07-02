@@ -7,6 +7,7 @@ module.exports = function(config) {
     basePath: '',
 
     // testing framework to use (jasmine/mocha/qunit/...)
+    //frameworks: ['jasmine'],
     frameworks: ['ng-scenario'],
 
     // list of files / patterns to load in the browser
