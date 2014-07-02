@@ -5,6 +5,10 @@ angular.module('uiTestingangularApp', [
     'ngResource',
     'ngSanitize',
     'ui.router',
+    'uiTestingangularApp.controllers',
+    'uiTestingangularApp.directives',
+    'uiTestingangularApp.services',
+    'uiTestingangularApp.filters',
     'pascalprecht.translate'
 ])
     .config(['$stateProvider', '$urlRouterProvider', '$translateProvider',
@@ -13,7 +17,7 @@ angular.module('uiTestingangularApp', [
             $stateProvider
                 .state('home', {
                     url: '/',
-                    templateUrl: 'views/main.html',
+                    templateUrl: 'views/home.html',
                     controller: "MainCtrl"
                 });
         }
