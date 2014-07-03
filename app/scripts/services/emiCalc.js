@@ -1,7 +1,11 @@
-angular.module('uiTestingangularApp.services').factory('emiService',[function(){
-	var _methods={
-		calculateInterestPerMonth:function(){}
+angular.module('uiTestingangularApp.services').factory('emiService', [
+    function() {
+        var _methods = {
+            calculateInterestPerMonth: function() {}
 
-	};
-	return {};
-}])
+        };
+        return {
+            getEmi: function() {}
+        };
+    }
+])
