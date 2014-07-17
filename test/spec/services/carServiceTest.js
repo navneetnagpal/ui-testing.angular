@@ -1,31 +1,28 @@
 describe('uiTestingangularApp: car service test', function() {
 
     var carService, httpBackend,
-        engineService;
+        engineService,
+        tyreService;
     beforeEach(module("uiTestingangularApp"));
-    /* describe('Test round', function() {
-
-        it('Test 1', function() {
-            expect(true).toBeTruthy();
-        });
-    });*/
-    beforeEach(inject(function(_carService_, $httpBackend, _engineService_) {
+   
+    beforeEach(inject(function(_carService_, $httpBackend, _engineService_,_tyreService_) {
         carService = _carService_;
         engineService = _engineService_;
+        tyreService=_tyreService_;
         httpBackend = $httpBackend;
 
         spyOn(engineService, "getEngineModel").andCallFake(function() {
             return "Mock Engine";
         });
         spyOn(engineService, "start");
+        spyOn(tyreService, "left");
     }));
-    describe('car service general', function() {
+    describe('Car::Engine', function() {
 
-        it('carService is defined', function() {
+        it('Car object should be ok', function() {
             expect(carService).toBeDefined();
         });
         it('getCarModel() should return string', function() {
-
             expect(carService.getCarModel()).toBe("Car 2.0 ->Mock Engine");
             expect(engineService.getEngineModel).toHaveBeenCalled();
 
@@ -36,7 +33,14 @@ describe('uiTestingangularApp: car service test', function() {
 
         });
     });
+  describe('Car::Tyres', function() {
+  
+        it('Car.left() should call tyre.left()', function() {
+            carService.left();
+            expect(tyreService.left).toHaveBeenCalled();
 
+        });
+    });
 
 
 });
