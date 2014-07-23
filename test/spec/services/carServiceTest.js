@@ -1,14 +1,14 @@
-describe('uiTestingangularApp: car service test', function() {
+xdescribe('uiTestingangularApp: car service test', function() {
 
     var carService, httpBackend,
         engineService,
         tyreService;
     beforeEach(module("uiTestingangularApp"));
-   
-    beforeEach(inject(function(_carService_, $httpBackend, _engineService_,_tyreService_) {
+
+    beforeEach(inject(function(_carService_, $httpBackend, _engineService_, _tyreService_) {
         carService = _carService_;
         engineService = _engineService_;
-        tyreService=_tyreService_;
+        tyreService = _tyreService_;
         httpBackend = $httpBackend;
 
         spyOn(engineService, "getEngineModel").andCallFake(function() {
@@ -33,8 +33,8 @@ describe('uiTestingangularApp: car service test', function() {
 
         });
     });
-  describe('Car::Tyres', function() {
-  
+    describe('Car::Tyres', function() {
+
         it('Car.left() should call tyre.left()', function() {
             carService.left();
             expect(tyreService.left).toHaveBeenCalled();
