@@ -20,41 +20,45 @@
 	<!-- endbuild -->
 	
 </head>
-<body ng-app="uiTestingangularApp">
+<body ng-app="uiTestingangularApp" >
 	<script type='text/ng-template' id='list-items.html'>
 		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" ui-sref="home">UI Testing</a>
-			</div>
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-					
-					<li class="" ng-repeat="item in menu" ng-class="{dropdown:item.subMenu!=undefined}">
-						<a ng-if="item.subMenu==undefined" ui-sref="{{item.link}}" class="" ng-class="{'dropdown-toggle':item.subMenu}" data-toggle="dropdown">{{item.text}} <span ng-if="item.subMenu" class="caret"></span></a>
-						<a  ng-if="item.subMenu!=undefined" class="" ng-class="{'dropdown-toggle':item.subMenu}" data-toggle="dropdown">{{item.text}}  <span ng-if="item.subMenu" class="caret"></span></a>
-						<ul ng-if="item.subMenu" class="dropdown-menu" role="menu">
-							<li ng-repeat="submenu in item.subMenu"><a ui-sref="{{submenu.link}}">{{submenu.text}}</a></li>
+				<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" ui-sref="home">UI Testing</a>
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+								
+								<li class="" ng-repeat="item in menu" ng-class="{dropdown:item.subMenu!=undefined}">
+										<a ng-if="item.subMenu==undefined" ui-sref="{{item.link}}" class="" ng-class="{'dropdown-toggle':item.subMenu}" data-toggle="dropdown"><span class="{{item.icon}}"></span>{{item.text}} <span ng-if="item.subMenu" class="caret"></span></a>
+										<a  ng-if="item.subMenu!=undefined" class="" ng-class="{'dropdown-toggle':item.subMenu}" data-toggle="dropdown"><span class="{{item.icon}}"></span>{{item.text}}  <span ng-if="item.subMenu" class="caret"></span></a>
+										<ul ng-if="item.subMenu" class="dropdown-menu" role="menu">
+												<li ng-repeat="submenu in item.subMenu"><a ui-sref="{{submenu.link}}"><span class="{{submenu.icon}}"></span>{{submenu.text}}</a></li>
+										</ul>
+								</li>
 						</ul>
-					</li>
-				</ul>
-				
-			</div>
+						
+				</div>
 		</div>
-			 
+			
 	</script>
-	<!--[if lt IE 7]>
-	<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-	<![endif]-->
-	<nav class="navbar navbar-default navbar-fixed-top" navigation="" role="navigation" ng-controller="NavCtrl">
-	</nav>
-	<!-- Add your site or application content here -->
-	<div class="container-fluid" ui-view=""></div>
+	<div class="app" ng-controller="AppCtrl">
+		
+		<!--[if lt IE 7]>
+		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+		<nav class="navbar navbar-default navbar-fixed-top" navigation="" role="navigation" ng-controller="NavCtrl">
+		</nav>
+		<!-- Add your site or application content here -->
+		<div class="container-fluid" ui-view=""></div>
+	</div>
+ 
 	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID
 	<script>
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -79,6 +83,7 @@
 	<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 	<script src="bower_components/angular-translate/angular-translate.js"></script>
 	<script src="bower_components/fastclick/lib/fastclick.js"></script>
+	<script src="bower_components/overthrow/dist/overthrow.js"></script>
 	<script src="bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.min.js"></script>
 	<!-- endbower -->
 	<!-- endbuild -->

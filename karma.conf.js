@@ -20,6 +20,8 @@ module.exports = function(config) {
             'app/bower_components/angular-ui-router/release/angular-ui-router.js',
             'app/bower_components/angular-translate/angular-translate.js',
             'test/mock/**/*.js',
+            'app/scripts/plugins/*.js',
+            'app/scripts/plugins/**/*.js',
             'app/scripts/libraries/*.js',
             'app/scripts/libraries/**/*.js',
             'app/scripts/global/i18/*.js',

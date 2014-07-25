@@ -1,5 +1,3 @@
-'use strict';
-
 angular.module('uiTestingangularApp', [
     'ngCookies',
     'ngResource',
@@ -13,6 +11,7 @@ angular.module('uiTestingangularApp', [
 ])
     .config(['$stateProvider', '$urlRouterProvider', '$translateProvider',
         function($stateProvider, $urlRouterProvider, $translateProvider) {
+            'use strict';
             $urlRouterProvider.otherwise('/');
             $stateProvider
                 .state('home', {
@@ -33,7 +32,7 @@ angular.module('uiTestingangularApp', [
                 .state('emicalc', {
                     url: '/emicalc',
                     templateUrl: 'views/emicalc.html',
-                    controller: "MainCtrl"
+                    controller: "EmiCtrl"
                 })
                 .state('d3home', {
                     url: '/d3home',
@@ -48,6 +47,21 @@ angular.module('uiTestingangularApp', [
                 .state('d3home.basicpie1', {
                     url: '/d3home/basicpie1',
                     templateUrl: 'views/basicpie1.html',
+                    controller: "MainCtrl"
+                })
+                .state('webgl', {
+                    url: '/webgl',
+                    templateUrl: 'views/webgl/index.html',
+                    controller: "MainCtrl"
+                })
+                .state('webgltest', {
+                    url: '/webgltest',
+                    templateUrl: 'views/webgl/test.html',
+                    controller: "MainCtrl"
+                })
+                .state('cartest', {
+                    url: '/cartest',
+                    templateUrl: 'views/webgl/cartest.html',
                     controller: "MainCtrl"
                 });
         }
