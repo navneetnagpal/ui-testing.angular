@@ -1,1 +1,1 @@
-window.UiTestMock={};
+var UiTestMock={};

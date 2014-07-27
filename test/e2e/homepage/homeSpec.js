@@ -1,11 +1,10 @@
-describe('E-M app', function() {
+describe('Ui Test App', function() {
     beforeEach(function() {
         browser.get('http://localhost:9000');
         ptor = protractor.getInstance();
     });
 
     it('menu should be available', function() {
-
         expect(element(by.css('ul.navbar'))).toBeDefined();
     });
 

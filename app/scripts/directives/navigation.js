@@ -6,7 +6,7 @@ angular.module('uiTestingangularApp.directives')
    			transclude: true,
          templateUrl: 'list-items.html',
          link: function(scope, element, attrs) {
-            	console.log('directive'); 
+          
          }
       };
     }]);
