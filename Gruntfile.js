@@ -17,7 +17,13 @@ module.exports = function(grunt) {
 
     // Define the configuration for all the tasks
     grunt.initConfig({
-
+        processhtml: {
+            e2e: {
+                files: {
+                    '.tmp/index_e2e.html': ['<%= yeoman.app %>/index.html']
+                }
+            }
+        },
         // Project settings
         yeoman: {
             // configurable paths
@@ -75,7 +81,7 @@ module.exports = function(grunt) {
             jsTest: {
                 files: ['test/spec/{,*/}*.js'],
                 tasks: ['newer:jshint:test', 'karma']
-            }, 
+            },
             gruntfile: {
                 files: ['Gruntfile.js']
             },
@@ -90,14 +96,30 @@ module.exports = function(grunt) {
                 ]
             }
         },
-      cssmin: {
+        protractor: {
+            options: {
+                keepAlive: true,
+                configFile: "e2e.conf.js"
+            },
+            e2e: {},
+            auto: {
+                keepAlive: true,
+                options: {
+                    args: {
+                        seleniumPort: 4444
+                    }
+                }
+            }
+
+        },
+        cssmin: {
             appstyles: {
                 options: {
                     banner: '/* My minified css file */'
                 },
                 files: {
-                     'app/.include/styles/style.min.css': [
-                     'app/.include/styles/style.css'
+                    'app/.include/styles/style.min.css': [
+                        'app/.include/styles/style.css'
                     ]
                 }
             }
@@ -126,16 +148,16 @@ module.exports = function(grunt) {
         concat_css: {
             less: {
                 src: [
-                  "app/styles/**/*.less",
+                    "app/styles/**/*.less",
                     'app/styles/modules/**/*.less'
 
-              ],
+                ],
                 dest: "app/.include/styles/app.less"
             },
             all: {
                 src: [
-                  "app/styles/**/*.css",
-                  "app/.include/styles/app.css"
+                    "app/styles/**/*.css",
+                    "app/.include/styles/app.css"
                 ],
                 dest: "app/.include/styles/appstyle.css"
             }
@@ -145,7 +167,7 @@ module.exports = function(grunt) {
             options: {
                 separator: '\n'
             },
-            ven: { 
+            ven: {
                 src: [
                     'app/scripts/libraries/*.js'
                 ],
@@ -164,7 +186,20 @@ module.exports = function(grunt) {
                 ],
                 dest: 'app/.include/scripts/appscripts.js'
             },
-
+            mockdata: {
+                src: [
+                    'test/mock/data/*.js',
+                    'test/mock/js/*.js'
+                ],
+                dest: '.tmp/mockE2E.js'
+            },
+            mockdataexport: {
+                src: [
+                    'test/mock/data/*.js',
+                    'test/mock/helper/*.js'
+                ],
+                dest: 'test/mock/mockData.js'
+            },
             dist: {
                 src: [
                     'app/scripts/global/i18/*.js',
@@ -196,6 +231,15 @@ module.exports = function(grunt) {
                     ]
                 }
             },
+            e2e: {
+                options: {
+                    open: false,
+                    base: [
+                        '.tmp',
+                        '<%= yeoman.app %>'
+                    ]
+                }
+            },
             test: {
                 options: {
                     port: 9001,
@@ -208,6 +252,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 options: {
+                    open: true,
                     base: '<%= yeoman.dist %>'
                 }
             }
@@ -280,7 +325,7 @@ module.exports = function(grunt) {
                     src: [
                         '<%= yeoman.dist %>/public/scripts/{,*/}*.js',
                         '<%= yeoman.dist %>/public/styles/{,*/}*.css',
-                        //'<%= yeoman.dist %>/public/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+                        '<%= yeoman.dist %>/public/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
                         '<%= yeoman.dist %>/public/styles/fonts/*'
                     ]
                 }
@@ -350,9 +395,9 @@ module.exports = function(grunt) {
             dist: {
                 files: [{
                     expand: true,
-                    cwd: 'app/.include/concat/scripts',
+                    cwd: 'app/.include/scripts',
                     src: '*.js',
-                    dest: 'app/.include/concat/scripts'
+                    dest: 'app/.include/scripts'
                 }]
             }
         },
@@ -386,6 +431,19 @@ module.exports = function(grunt) {
                     cwd: '.tmp/images',
                     dest: '<%= yeoman.dist %>/images',
                     src: ['generated/*']
+                }]
+            },
+            distlib: {
+                files: [{
+                    expand: true,
+                    dot: true,
+                    cwd: '<%= yeoman.app %>/.include',
+                    dest: '<%= yeoman.dist %>',
+                    src: [
+                        'styles/appstyle.css',
+                        'scripts/*',
+                        'fonts/*'
+                    ]
                 }]
             },
             styles: {
@@ -461,14 +519,25 @@ module.exports = function(grunt) {
             'watch'
         ]);
     });
+    grunt.registerTask('e2e', function(target) {
 
+        grunt.task.run([
+            'clean:server',
+            'concat:mockdata',
+            'concat:mockdataexport',
+            'processhtml:e2e',
+            'concurrent:server',
+            'connect:e2e',
+            'protractor:e2e'
+        ]);
+    });
     grunt.registerTask('server', function() {
         grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
         grunt.task.run(['serve']);
     });
 
     grunt.registerTask('test', [
-        'clean:server', 
+        'clean:server',
         'concurrent:test',
         'autoprefixer',
         'connect:test',
@@ -478,22 +547,23 @@ module.exports = function(grunt) {
     grunt.registerTask('build', [
         'clean:dist',
         'bower-install',
-        'useminPrepare',
+        // 'useminPrepare',
+        'cssjsalldist',
         'concurrent:dist',
         'autoprefixer',
-        'cssjsdev',
         'ngmin',
         'copy:dist',
-        'cdnify',
-        'cssmin',
-        'uglify',
-        'rev',
-        'usemin',
-        'htmlmin'
+        // 'copy:distlib',
+        // 'cdnify',
+        // 'cssmin',
+        // 'uglify',
+        'rev'
+        // 'usemin',
+        // 'htmlmin'
     ]);
 
     grunt.registerTask('default', [
-        'newer:jshint',
+        // 'newer:jshint',
         'test',
         'build'
     ]);
@@ -511,4 +581,5 @@ module.exports = function(grunt) {
         'less:dev',
         'concat_css:all'
     ]);
+
 };

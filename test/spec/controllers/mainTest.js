@@ -1,6 +1,6 @@
-'use strict';
 
 describe('Controller: MainCtrl', function() {
+'use strict';
 
     // load the controller's module
     beforeEach(module('uiTestingangularApp'));

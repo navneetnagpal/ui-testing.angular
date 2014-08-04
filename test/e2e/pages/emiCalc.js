@@ -2,6 +2,9 @@
 
      var dom = {
          container: by.css(".ui-app-view .emicalc") ,
+         offers: {
+            btnToggle:by.css('#availableOffers .btn.dropdown-toggle')
+         },
          inputForm: {
              loanAmount:  by.css(".ui-app-view .emicalc #loanAmount"),
              roi: by.css(".ui-app-view .emicalc #roi"),
@@ -35,6 +38,10 @@
          },
          reset:function(){
             element(dom.inputForm.reset).click();
+         },
+         selectOffer:function(num){
+            element(dom.offers.btnToggle).click();
+            element(by.css('#availableOffers .dropdown-menu li:nth-child('+num+')')).click();
          },
          isResultsVisible:function(){
             return  element(dom.scheduleTable.container).isDisplayed()

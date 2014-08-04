@@ -2,7 +2,9 @@
   "name": "uitestingangular",
   "version": "0.0.0",
   "dependencies": {
-    "angular-ui-router": "~0.2.10"
+    "angular-ui-router": "~0.2.10",
+    "grunt-protractor-runner": "~1.1.0",
+    "grunt-processhtml": "~0.3.3"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
@@ -56,7 +58,8 @@
     "grunt-concat-css": "~0.3.1",
     "grunt-contrib-less": "~0.11.3",
     "protractor": "~1.0.0-rc1",
-    "karma-spec-reporter": "0.0.13"
+    "karma-spec-reporter": "0.0.13",
+    "protractor-html-screenshot-reporter": "0.0.14"
   },
   "engines": {
     "node": ">=0.8.0"

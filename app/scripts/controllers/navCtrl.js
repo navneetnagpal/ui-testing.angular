@@ -1,5 +1,9 @@
 angular.module('uiTestingangularApp')
-    .controller('NavCtrl', function($scope) {
-        'use strict';
-        $scope.menu = UITesting.Menu;
-    });
+    .controller('NavCtrl', ['$scope', 'menu',
+        function($scope, menu) {
+            'use strict';
+            menu.getAllMenus().then(function(data) {
+                $scope.menu = data;
+            });
+        }
+    ]);

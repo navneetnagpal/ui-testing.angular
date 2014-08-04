@@ -1,13 +1,15 @@
 describe('Ui Test App', function() {
-    beforeEach(function() {
+   /* beforeEach(function() {
         browser.get('http://localhost:9000');
         ptor = protractor.getInstance();
-    });
+    });*/
 
-    it('menu should be available', function() {
+  /*  it('menu should be available', function() {
         expect(element(by.css('ul.navbar'))).toBeDefined();
     });
-
+	it('emicalc should be available', function() {
+        expect(element(by.css('ul.navbar'))).toBeDefined();
+    });*/
     // it('should enter ID in filter', function() {
     //            ptor.actions().sendKeys(protractor.Key.HOME).perform();
     //   element(by.model('Model.ID')).sendKeys('10');
