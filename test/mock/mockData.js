@@ -308,7 +308,4 @@ UiTestMock.MenuTestData=[  {
     link: "emicalc",
     icon: "icon fa fa-inr"
 }];
-/*if (module && module.exports){
-    module.exports=UiTestMock;
-}*/
 module.exports=UiTestMock;

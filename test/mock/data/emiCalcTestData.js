@@ -298,6 +298,3 @@ UiTestMock.EmiCalcTestData = [{
         }]
     }
 }];
-/*if (module && module.exports){
-    module.exports=UiTestMock;
-}*/
