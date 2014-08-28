@@ -63,6 +63,11 @@ angular.module('uiTestingangularApp', [
                     url: '/cartest',
                     templateUrl: 'views/webgl/cartest.html',
                     controller: "MainCtrl"
+                })
+                .state('timelinebasic', {
+                    url: '/timelinebasic',
+                    templateUrl: 'views/timeline/timeline-basic.html',
+                    controller: "timelineCtrl"
                 });
         }
     ]);

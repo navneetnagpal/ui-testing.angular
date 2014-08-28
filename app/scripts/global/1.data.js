@@ -36,6 +36,17 @@ UITesting.Menu = [{
         link: "basicpie1",
         icon: "icon glyphicon glyphicon-signal"
     }]
+},{
+    text: "Time Line",
+    link: "timeline",
+    icon: "icon glyphicon glyphicon-list",
+    subMenu: [{
+        text: "Basic",
+        link: "basic",
+        icon: "icon glyphicon glyphicon-signal"
+    }
+ 
+    ]
 }, {
     text: "WEB GL",
     link: "webgl",

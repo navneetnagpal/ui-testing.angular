@@ -5,7 +5,7 @@
 	}
 	$.fn.xTimeline = function(options){
 		return this.each(function(){
-			this.data('obj',new TimeLine(options));
+			//this.data('obj',new TimeLine(options));
 		});
 	}
 })(window, jQuery);

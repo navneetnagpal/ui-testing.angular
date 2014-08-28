@@ -48,7 +48,8 @@ module.exports = function(grunt) {
             libscripts: {
                 files: [
                     'app/scripts/libraries/*.js',
-                    'app/scripts/libraries/**/*.js'
+                    'app/scripts/libraries/**/*.js',
+                    'app/scripts/plugins/*.js'
                 ],
                 tasks: ['concat:ven']
             },
@@ -169,7 +170,8 @@ module.exports = function(grunt) {
             },
             ven: {
                 src: [
-                    'app/scripts/libraries/*.js'
+                    'app/scripts/libraries/*.js',
+                    'app/scripts/plugins/*.js'
                 ],
                 dest: 'app/.include/scripts/libraries.js'
             },

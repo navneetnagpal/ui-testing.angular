@@ -50,4 +50,16 @@
         "icon": "icon glyphicon glyphicon-signal"
     }
     ]
+},
+{
+    "text": "Time Line",
+    "link": "timeline",
+    "icon": "icon glyphicon glyphicon-list",
+    "subMenu": [{
+        "text": "Basic",
+        "link": "timelinebasic",
+        "icon": "icon glyphicon glyphicon-signal"
+    }
+ 
+    ]
 }]
