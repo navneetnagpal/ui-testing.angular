@@ -20,9 +20,7 @@ exports.config = {
         // ,{
         // 'browserName': 'firefox'
         // }
-        // ,{
-        // 'browserName': 'ie9'
-        // }
+
     ],
 
 
@@ -44,8 +42,6 @@ exports.config = {
         var ptor = protractor.getInstance();
         var driver = browser.driver;
         var path = require('path');
-            // httpBackendMock = require('test/e2e/objects/httpBackendMock').httpBackendMock;
-        //$('body').attr('ng-app', 'httpBackendMock');
         // Add a reporter and store screenshots to `screnshots`:
         jasmine.getEnv().addReporter(new HtmlReporter({
             baseDirectory: 'tmp/screenshots/' //+new Date().toISOString().replace(/\./g,"-").replace(/:/g,"-")
@@ -60,8 +56,6 @@ exports.config = {
         // setting extra width so that cq sidekick overlay 
         // doesn't overlay over and interfere interactions with site elements
         driver.manage().window().setSize(1750, 815);
-        // ptor.addMockModule('httpBackendMock', httpBackendMock);
-
     }
 
 };

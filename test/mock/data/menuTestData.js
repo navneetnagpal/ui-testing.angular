@@ -5,7 +5,7 @@ UiTestMock.MenuTestData=[  {
     icon: "icon fa fa-inr"
 },
   {
-    text: "EMI Calculator2",
+    text: "Mocked Menu",
     link: "emicalc2",
     icon: "icon fa fa-inr"
 }];

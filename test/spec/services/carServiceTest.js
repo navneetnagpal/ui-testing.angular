@@ -1,4 +1,4 @@
-xdescribe('uiTestingangularApp: car service test', function() {
+describe('uiTestingangularApp: car service test', function() {
 
     var carService, httpBackend,
         engineService,
@@ -19,7 +19,7 @@ xdescribe('uiTestingangularApp: car service test', function() {
     }));
     describe('Car::Engine', function() {
 
-        it('Car object should be ok', function() {
+        it('Car object should be defeined', function() {
             expect(carService).toBeDefined();
         });
         it('getCarModel() should return string', function() {

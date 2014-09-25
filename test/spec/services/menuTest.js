@@ -7,10 +7,8 @@ describe('TestApp:Services>Menu', function() {
     beforeEach(inject(function(_menu_, _$httpBackend_, $q) {
         menu = _menu_;
         $httpBackend = _$httpBackend_;
-        var $defer = $q.defer();
-        $defer.resolve(testJson)
-        testJson = UiTestMock.menuTestData;
-        $httpBackend.whenGET('data/menu.json').respond($defer.promise);
+        testJson = UiTestMock.MenuTestData;
+        $httpBackend.whenGET('data/menu.json').respond(testJson);
     }));
     describe('Menu::Basic', function() {
 
@@ -24,7 +22,7 @@ describe('TestApp:Services>Menu', function() {
         it('should send request to server for get data', function() {
             var result = menu.getAllMenus();
             result.then(function(data) {
-                expect(testJson).toBe(data);
+                expect(testJson.length).toBe(data.length);
             });
             $httpBackend.flush();
         });

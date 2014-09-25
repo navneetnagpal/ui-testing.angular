@@ -1,8 +1,15 @@
 Utils.Number = {
     isEqual: function(a, b, ignoreDiff) {
         if (ignoreDiff > 0) {
-            return a - ignoreDiff <=b && a+ignoreDiff >= b ;
+            if (!(a - ignoreDiff <= b && a + ignoreDiff >= b)) {
+                return [a, ' = ', b].join('');
+            }
+            return true;
+
         }
-        return a === b;
+        if (a !== b) {
+            return [a, ' = ', b].join('');
+        }
+        return true;
     }
 }

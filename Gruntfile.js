@@ -522,7 +522,6 @@ module.exports = function(grunt) {
         ]);
     });
     grunt.registerTask('e2e', function(target) {
-
         grunt.task.run([
             'clean:server',
             'concat:mockdata',
@@ -530,6 +529,14 @@ module.exports = function(grunt) {
             'processhtml:e2e',
             'concurrent:server',
             'connect:e2e',
+            'protractor:e2e'
+        ]);
+    });
+     grunt.registerTask('e2erun', function(target) {
+        grunt.task.run([         
+        	'concat:mockdata',
+            'concat:mockdataexport',   
+            'processhtml:e2e',  
             'protractor:e2e'
         ]);
     });
