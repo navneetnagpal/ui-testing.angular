@@ -1,0 +1,7 @@
+[
+{"path":"data/playlist/playlist1.json","title":"DAM 111","icon":"icon fa fa-file"},
+{"path":"data/playlist/playlist2.json","title":"VIDEO 222","icon":"icon fa fa-video"},
+{"path":"data/playlist/playlist3.json","title":"VIDEO 2122","icon":"icon fa fa-video"},
+{"path":"data/playlist/playlist1.json","title":"VIDEO 2322","icon":"icon fa fa-video"},
+{"path":"data/playlist/playlist2.json","title":"VIDEO 2242","icon":"icon fa fa-video"}
+]

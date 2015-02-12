@@ -1,0 +1,63 @@
+
+
+<script type="text/ng-template" id="playlist-overlay.html">
+	<div class="playlist-overlay"  >
+			<div class="close-btn" ng-click="close()">
+					<span class="icon fa fa-times"></span>
+			</div>
+			<div class="playlist-header">
+					<span class="path">{{path}} {{title}}</span>
+			</div>
+			<div class="container-viewer">
+				<div class="title">
+						Title: {{title}}
+				</div>
+				<div class="title">
+						Path: {{path}}
+				</div>
+				<div class="data-display">
+						Data:1 of {{data.length}}
+						
+				<ul>
+						<li ng-repeat="item in data">
+							<a href='javascript:void(0)' data-path="{{item.path}}"
+							ng-click="selectPlaylist($event)" show-overlay="{{showOverlay}}" > {{item.title}} </a>
+						</li>
+				</ul>
+				</div>
+			</div>
+	</div>
+</script>
+
+<div class="library" ng-controller="LibraryController">
+Library:Title
+<div >{{selectedTitle}}</div>
+Library:Path
+<div >{{selectedPath}}</div>
+	<a href="javascript:void(0)" class="plist-trigger" data-path="/data/playlists/insights.json" mode='grouper' show-overlay="false" class="view-all">View All</a>
+	<ul>
+		<li><a href="javascript:void(0)" class="plist-trigger" data-path="/data/playlist/playlist1.json" show-overlay="true" >carausel 1</a></li>
+		<li><a href="javascript:void(0)" class="plist-trigger" data-path="/data/playlist/playlist2.json"  show-overlay="true" >carausel 2</a></li>
+		<li><a href="javascript:void(0)" class="plist-trigger" data-path="/data/playlist/playlist3.json" show-overlay="true" >carausel 3</a></li>
+	</ul>
+
+</div>
+<div class="insights" ng-controller="InsightsCtrl">
+Insight:Title
+<div >{{selectedTitle}}</div>
+Insight:Path
+<div >{{selectedPath}}</div>
+	<a href="javascript:void(0)"  class="plist-trigger" data-path="/data/playlists/insights.json" show-overlay="true" mode='grouper' class="view-all">View All</a>
+	<ul>
+		<li><a href="javascript:void(0)"   class="plist-trigger" data-path="/data/playlist/playlist1.json" show-overlay="true" >carausel 1</a></li>
+		<li><a href="javascript:void(0)"  class="plist-trigger" data-path="/data/playlist/playlist2.json"  show-overlay="true" >carausel 2</a></li>
+		<li><a href="javascript:void(0)"  class="plist-trigger" data-path="/data/playlist/playlist3.json" show-overlay="true" >carausel 3</a></li>
+	</ul>
+
+</div>
+
+	<div id="playlist"  playlist-overlay="" style="display:none;" >
+	
+	</div>
+
+  

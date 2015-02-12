@@ -2,8 +2,86 @@
     "text": "Home",
     "link": "home",
     "icon": "icon glyphicon glyphicon-home"
-},   {
+}, {
     "text": "EMI Calculator",
     "link": "emicalc",
     "icon": "icon fa fa-inr"
-} ]
+}, {
+    "text": "Playlist Test",
+    "active":false,
+    "link": "playlisttest",
+    "icon": "icon fa fa-list",
+    "subMenu": [ {
+        "text": "Homepage",
+        "link": "playlisttest",
+        "icon": "icon glyphicon glyphicon-file"
+    },{
+        "text": "Library",
+        "link": "playlistlibrary",
+        "icon": "icon glyphicon glyphicon-file"
+    }, {
+        "text": "Managers",
+        "link": "managers",
+        "icon": "icon glyphicon glyphicon-file"
+    }]
+},
+{
+    "text": "Ext JS 3 Samples",
+    "link": "extjs",
+    "icon": "icon fa fa-list",
+    "subMenu": [ {
+        "text": "Simple Grid",
+        "link": "extjssimplegrid",
+        "icon": "icon glyphicon glyphicon-file"
+    },
+    {
+        "text": "Edit Grid",
+        "link": "editorgrid",
+        "icon": "icon glyphicon glyphicon-file"
+    }]
+},
+{
+    "text": "HTML/CSS Samples",
+    "link": "html",
+    "icon": "icon fa fa-list",
+    "subMenu": [ {
+        "text": "HTML",
+        "link": "html",
+        "icon": "icon glyphicon glyphicon-file"
+    },
+    {
+        "text": "Bootstrap Image Gallery",
+        "link": "bsimagegallary",
+        "icon": "icon glyphicon glyphicon-file"
+    },
+    {
+        "text": "Image Gallery",
+        "link": "imagegall1",
+        "icon": "icon glyphicon glyphicon-file"
+    }]
+},
+{
+    "text": "High charts Samples",
+    "link": "highcharts",
+    "icon": "icon fa fa-list",
+    "subMenu": [{
+        "text": "Simple Bar Chart",
+        "link": "simplehighchart({'type':'bar'})",
+        "icon": "icon glyphicon glyphicon-file"
+    },
+     {
+        "text": "Simple Column Chart",
+        "link": "simplehighchart({'type':'column'})",
+        "icon": "icon glyphicon glyphicon-file"
+    },
+     {
+        "text": "Expense charts",
+        "link": "simplehighchart({'type':'column2'})",
+        "icon": "icon glyphicon glyphicon-file"
+    },
+     {
+        "text": "Skills pie chart",
+        "link": "simplehighchart({'type':'skillpie'})",
+        "icon": "icon glyphicon glyphicon-file"
+    }]
+}]

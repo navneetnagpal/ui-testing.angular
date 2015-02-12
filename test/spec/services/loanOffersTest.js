@@ -21,7 +21,7 @@ describe('TestApp:Services>Loan Offer', function() {
         it('should send request to server for get data', function() {
             var result = loanOffer.getAvailableOffers();
             result.then(function(data) {
-                expect(testJson.length).toBe(data.length);
+                expect(testJson).toEqual(data);
             });
             $httpBackend.flush();
         });

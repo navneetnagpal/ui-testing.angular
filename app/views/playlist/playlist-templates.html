@@ -1,0 +1,28 @@
+<script type="text/ng-template" id="playlist-overlay.html">
+	<div class="playlist-overlay"  >
+			<div class="close-btn" ng-click="close()">
+					<span class="icon fa fa-times"></span>
+			</div>
+			<div class="playlist-header">
+					<span class="path">{{path}} {{title}}</span>
+			</div>
+			<div class="container-viewer">
+				<div class="title">
+						Title: {{title}}
+				</div>
+				<div class="title">
+						Path: {{path}}
+				</div>
+				<div class="data-display">
+						Data:1 of {{data.length}}
+						
+				<ul>
+						<li ng-repeat="item in data">
+							<a href='javascript:void(0)' data-path="{{item.path}}"
+							ng-click="selectPlaylist($event)" show-overlay="{{showOverlay}}" > {{item.title}} </a>
+						</li>
+				</ul>
+				</div>
+			</div>
+	</div>
+</script>

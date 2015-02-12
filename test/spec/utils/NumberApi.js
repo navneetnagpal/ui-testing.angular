@@ -8,7 +8,7 @@ Utils.Number = {
 
         }
         if (a !== b) {
-            return [a, ' = ', b].join('');
+            return [a, ' not matched with ', b].join('');
         }
         return true;
     }

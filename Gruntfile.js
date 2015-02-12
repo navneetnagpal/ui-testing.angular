@@ -38,10 +38,15 @@ module.exports = function(grunt) {
                     'app/scripts/global/i18/*.js',
                     'app/scripts/*.js',
                     'app/scripts/global/*.js',
+                    'app/scripts/modules/*.js',
+                    'app/scripts/modules/**/*.js',
                     'app/scripts/filters/*.js',
                     'app/scripts/services/*.js',
+                    'app/scripts/services/**/*.js',
                     'app/scripts/controllers/*.js',
-                    'app/scripts/directives/*.js'
+                    'app/scripts/controllers/**/*.js',
+                    'app/scripts/directives/*.js',
+                    'app/scripts/directives/**/*.js'
                 ],
                 tasks: ['concat:js']
             },
@@ -181,9 +186,14 @@ module.exports = function(grunt) {
                     'app/scripts/global/i18/*.js',
                     'app/scripts/*.js',
                     'app/scripts/global/*.js',
+                    'app/scripts/modules/*.js',
+                    'app/scripts/modules/**/*.js',
                     'app/scripts/filters/*.js',
                     'app/scripts/services/*.js',
+                    'app/scripts/services/**/*.js',
                     'app/scripts/controllers/*.js',
+                    'app/scripts/controllers/**/*.js',
+                    'app/scripts/directives/**/*.js',
                     'app/scripts/directives/*.js'
                 ],
                 dest: 'app/.include/scripts/appscripts.js'
@@ -207,10 +217,15 @@ module.exports = function(grunt) {
                     'app/scripts/global/i18/*.js',
                     'app/scripts/*.js',
                     'app/scripts/global/*.js',
+                    'app/scripts/modules/*.js',
+                    'app/scripts/modules/**/*.js',
                     'app/scripts/filters/*.js',
                     'app/scripts/services/*.js',
+                    'app/scripts/services/**/*.js',
                     'app/scripts/controllers/*.js',
-                    'app/scripts/directives/*.js'
+                    'app/scripts/controllers/**/*.js',
+                    'app/scripts/directives/*.js',
+                    'app/scripts/directives/**/*.js'
                 ],
                 dest: 'app/.include/scripts/appscripts.js'
             }

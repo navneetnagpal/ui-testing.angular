@@ -9,6 +9,7 @@
 	<title></title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<!-- build:css styles/vendor.css -->
 	<!-- bower:css -->
@@ -20,7 +21,7 @@
 	<!-- endbuild -->
 	
 </head>
-<body ng-app="uiTestingangularApp" >
+<body ng-app="uiTestingangularApp" class="ui-testing-body" global-launcher="" >
 	<script type='text/ng-template' id='list-items.html'>
 		<div class="container-fluid">
 				<div  class="navbar-header">
@@ -30,12 +31,12 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" ui-sref="home">UI Testing</a>
+						<a class="navbar-brand" ui-sref="home"> <img ng-src="images/uilogo.png"/> </a>
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul id="mainNav" class="nav navbar-nav">
 								
-								<li class="" ng-repeat="item in menu" ng-class="{dropdown:item.subMenu!=undefined}">
+								<li class="" ng-if="item.active!==false" ng-repeat="item in menu" ng-class="{dropdown:item.subMenu!=undefined}">
 										<a ng-if="item.subMenu==undefined" ui-sref="{{item.link}}" class="{{item.link}}" ng-class="{'dropdown-toggle':item.subMenu}" data-toggle="dropdown"><span class="{{item.icon}}"></span>{{item.text}} <span ng-if="item.subMenu" class="caret"></span></a>
 										<a  ng-if="item.subMenu!=undefined" class="{{item.link}}" ng-class="{'dropdown-toggle':item.subMenu}" data-toggle="dropdown"><span class="{{item.icon}}"></span>{{item.text}}  <span ng-if="item.subMenu" class="caret"></span></a>
 										<ul ng-if="item.subMenu" class="dropdown-menu" role="menu">

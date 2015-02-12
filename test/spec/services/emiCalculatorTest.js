@@ -73,7 +73,7 @@ describe('TestApp:Services>EMI Calculator', function() {
 
         for (var count = 0, max = testJson.length; count < max; count++) {
             (function(input, output) {
-                it(['should return total emi=', output.schedule.length, '/- on loan=', input.loan, "/- roi=" + input.roi + " tenure=" + input.tenure].join(''), function() {
+                it(['should return total emi=', output.schedule.length, ' on loan=', input.loan, "/- roi=" + input.roi + " tenure=" + input.tenure].join(''), function() {
                     var retObj = emiCalculator.getEmiSchedule(input.loan, input.roi, input.tenure);
                     expect(output.schedule.length).toBe(retObj.length);
                 });
@@ -85,21 +85,43 @@ describe('TestApp:Services>EMI Calculator', function() {
     for (var count = 0, max = testJson.length; count < max; count++) {
         (function(no, input, output) {
             describe('Emi Calculator::Test#' + no + ' loan=' + input.loan + ' roi=' + input.roi + ' tenure=' + input.tenure, function() {
-                it('shoud match the schedule', function() {
+                it('shoud match the schedule of interest', function() {
                     var results = emiCalculator.getEmiSchedule(input.loan, input.roi, input.tenure);
                     for (var jcount = 0, jMax = output.schedule.length; jcount < jMax; jcount++) {
-
-
-                       /* expect(results[jcount].interest).toBe(output.schedule[jcount].interest);
-                        expect(results[jcount].principal).toBe(output.schedule[jcount].principal);
-                        expect(results[jcount].principalYtd).toBe( output.schedule[jcount].principalYtd);
-                        expect(results[jcount].balance).toBe(output.schedule[jcount].balance);*/
                         expect(true).toBe(Utils.Number.isEqual(results[jcount].interest, output.schedule[jcount].interest, .10));
+                        // expect(true).toBe(Utils.Number.isEqual(results[jcount].principal, output.schedule[jcount].principal, .10));
+                        // expect(true).toBe(Utils.Number.isEqual(results[jcount].principalYtd, output.schedule[jcount].principalYtd, .10));
+                        // expect(true).toBe(Utils.Number.isEqual(results[jcount].balance, output.schedule[jcount].balance, .10));
+                    }
+
+                });
+                it('shoud match the schedule of principal', function() {
+                    var results = emiCalculator.getEmiSchedule(input.loan, input.roi, input.tenure);
+                    for (var jcount = 0, jMax = output.schedule.length; jcount < jMax; jcount++) {
+                        // expect(true).toBe(Utils.Number.isEqual(results[jcount].interest, output.schedule[jcount].interest, .10));
                         expect(true).toBe(Utils.Number.isEqual(results[jcount].principal, output.schedule[jcount].principal, .10));
+                        // expect(true).toBe(Utils.Number.isEqual(results[jcount].principalYtd, output.schedule[jcount].principalYtd, .10));
+                        // expect(true).toBe(Utils.Number.isEqual(results[jcount].balance, output.schedule[jcount].balance, .10));
+                    }
+
+                });
+                it('shoud match the schedule of principalYtd', function() {
+                    var results = emiCalculator.getEmiSchedule(input.loan, input.roi, input.tenure);
+                    for (var jcount = 0, jMax = output.schedule.length; jcount < jMax; jcount++) {
+                        // expect(true).toBe(Utils.Number.isEqual(results[jcount].interest, output.schedule[jcount].interest, .10));
+                        // expect(true).toBe(Utils.Number.isEqual(results[jcount].principal, output.schedule[jcount].principal, .10));
                         expect(true).toBe(Utils.Number.isEqual(results[jcount].principalYtd, output.schedule[jcount].principalYtd, .10));
+                        // expect(true).toBe(Utils.Number.isEqual(results[jcount].balance, output.schedule[jcount].balance, .10));
+                    }
+
+                });
+                it('shoud match the schedule balance', function() {
+                    var results = emiCalculator.getEmiSchedule(input.loan, input.roi, input.tenure);
+                    for (var jcount = 0, jMax = output.schedule.length; jcount < jMax; jcount++) {
+                        // expect(true).toBe(Utils.Number.isEqual(results[jcount].interest, output.schedule[jcount].interest, .10));
+                        // expect(true).toBe(Utils.Number.isEqual(results[jcount].principal, output.schedule[jcount].principal, .10));
+                        // expect(true).toBe(Utils.Number.isEqual(results[jcount].principalYtd, output.schedule[jcount].principalYtd, .10));
                         expect(true).toBe(Utils.Number.isEqual(results[jcount].balance, output.schedule[jcount].balance, .10));
-
-
                     }
 
                 });

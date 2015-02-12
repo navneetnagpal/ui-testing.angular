@@ -1,0 +1,123 @@
+<section class="simplepiechart sec-type-1">
+	
+	<header class="default-header">
+		<h1>Skills Pie Chart</h1>
+	</header>
+
+	<section class="content">
+		<div class="simple-pie-chart" id="skillspie-chart">
+			
+		</div>
+	</section>
+</section>
+
+<script type="text/javascript">
+	
+    $(function(){
+    	  var colors = Highcharts.getOptions().colors,
+        	categories = ['UI Interactive', 'UX', 'Server'],
+        	 data = [{
+	            y: 70,
+	            color: colors[0],
+	            drilldown: {
+	                name: 'UI Techs',
+	                categories: ['JS', 'CSS', 'HTML', 'CSS 3'],
+	                data: [30, 10, 20, 10],
+	                color: colors[0]
+	            }
+        	},
+        	{
+	            y: 20,
+	            color: colors[1],
+	            drilldown: {
+	                name: 'UX Techs',
+	                categories: ['Experience Design', 'Usability Skills', 'HCFI'],
+	                data: [13, 5, 2],
+	                color: colors[1]
+	            }
+        	},
+        	{
+	            y: 10,
+	            color: colors[2],
+	            drilldown: {
+	                name: 'Server Techs',
+	                categories: ['.NET', 'Node.js', 'ASP'],
+	                data: [2, 5, 3],
+	                color: colors[2]
+	            }
+        	}],
+	        skillsData = [],
+	        toolsData = [],
+	         dataLen = data.length,
+	         drillDataLen;
+
+	        // Build the data arrays
+	    for (i = 0; i < dataLen; i += 1) {
+
+	        // add browser data
+	        skillsData.push({
+	            name: categories[i],
+	            y: data[i].y,
+	            color: data[i].color
+	        });
+
+	        // add version data
+	        drillDataLen = data[i].drilldown.data.length;
+	        for (j = 0; j < drillDataLen; j += 1) {
+	            brightness = 0.2 - (j / drillDataLen) / 5;
+	            toolsData.push({
+	                name: data[i].drilldown.categories[j],
+	                y: data[i].drilldown.data[j],
+	                color: Highcharts.Color(data[i].color).brighten(brightness).get()
+	            });
+	        }
+	    }
+       
+
+        $("#skillspie-chart").highcharts({
+              chart: {
+            type: 'pie'
+        },
+        title: {
+            text: 'Skills As of Now'
+        },
+        yAxis: {
+            title: {
+                text: 'Skills %'
+            }
+        },
+        plotOptions: {
+            pie: {
+                shadow: false,
+                center: ['50%', '50%']
+            }
+        },
+        tooltip: {
+            valueSuffix: '%'
+        },
+        series: [{
+            name: 'Skills',
+            data: skillsData,
+            size: '60%',
+            dataLabels: {
+                formatter: function () {
+                    return this.y > 5 ? this.point.name : null;
+                },
+                color: 'white',
+                distance: -30
+            }
+        }, {
+            name: 'Tools',
+            data: toolsData,
+            size: '80%',
+            innerSize: '60%',
+            dataLabels: {
+                formatter: function () {
+                    // display only if larger than 1
+                    return this.y > 1 ? '<b>' + this.point.name + ':</b> ' + this.y + '%'  : null;
+                }
+            }
+        }]
+        });
+    })();
+</script>
