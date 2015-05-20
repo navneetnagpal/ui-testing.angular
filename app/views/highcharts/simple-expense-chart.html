@@ -1,0 +1,379 @@
+<section class="expensechart sec-type-1">
+	
+	<header class="default-header">
+		<h1>Expense Charts</h1>
+	</header>
+
+	<section class="content">
+		<div class="col-md-12">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="simple-column-chart" id="halfyearly-chart1">
+				
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="simple-column-chart" id="halfyearly-chart2">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-12">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="simple-pie-chart" id="monthly-pie1">
+						
+					</div>
+				</div>
+				<div class="col-md-6">
+						<div class="simple-bar-chart" id="monthly-bar1">
+						
+					</div>
+
+				</div>
+			</div>
+		</div>
+		
+		
+	</section>
+</section>
+<script>
+	 $("#halfyearly-chart1").highcharts({
+	     chart: {
+	         // type: 'column',
+	         // width: 900
+	     },
+	     title: {
+	         text: 'Forecast'
+	     },
+	     /* subtitle: {
+            text: 'Source: WorldClimate.com'
+        },*/
+	     xAxis: {
+	         categories: [
+	             'Jan',
+	             'Feb',
+	             'Mar',
+	             'Apr',
+	             'May',
+	             'Jun'
+	         ]
+	     },
+	     yAxis: {
+	         min: 0,
+	         title: {
+	             text: 'Expenses'
+	         }
+	     },
+	     tooltip: {
+	         headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+	         pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+	             '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+	         footerFormat: '</table>',
+	         shared: true,
+	         useHTML: true
+	     },
+	     plotOptions: {
+	         column: {
+	             pointPadding: 0.2,
+	             borderWidth: 0
+	         }
+	     },
+	     series: [{
+	         type: 'column',
+	         name: 'Earnings',
+	         data: [110000, 110000, 110000, 110000, 110000, 110000]
+
+	     }, {
+	         type: 'column',
+	         name: 'Expenses',
+	         data: [70000, 70000, 70000, 70000, 70000, 70000]
+
+	     }, {
+	         type: 'column',
+	         name: 'Interest',
+	         data: [10000, 10000, 12000, 10000, 11000, 9000]
+
+	     }, {
+	         type: 'column',
+	         name: 'Savings',
+	         data: [30000, 30000, 36000, 30000, 30000, 32000]
+
+	     }]
+	 });
+
+
+	 $("#halfyearly-chart2").highcharts({
+	     chart: {
+	         // type: 'column',
+	         // width:600
+	     },
+	     title: {
+	         text: 'Forecast'
+	     },
+	     /* subtitle: {
+            text: 'Source: WorldClimate.com'
+        },*/
+	     xAxis: {
+	         categories: [
+	             'Jan',
+	             'Feb',
+	             'Mar',
+	             'Apr',
+	             'May',
+	             'Jun'
+	         ]
+	     },
+	     yAxis: {
+	         min: 0,
+	         title: {
+	             text: 'Expenses'
+	         }
+	     },
+	     tooltip: {
+	         headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+	         pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+	             '<td style="padding:0"><b>&#8377;{point.y}</b></td></tr>',
+	         footerFormat: '</table>',
+	         shared: true,
+	         useHTML: true
+	     },
+	     plotOptions: {
+	         column: {
+	             pointPadding: 0.2,
+	             borderWidth: 0
+	         }
+	     },
+	     series: [{
+	         type: 'column',
+	         color: '#0066ff',
+	         name: 'Earnings',
+	         data: [110000, 110000, 110000, 110000, 110000, 110000]
+
+	     }, {
+	         type: 'column',
+	         color: '#df1700',
+	         name: 'Expenses',
+	         data: [70000, 70000, 100000, 90000, 80000, 70000]
+
+	     }, {
+	         type: 'column',
+	         color: '#ffa200',
+	         name: 'Interest',
+	         data: [10000, 10000, 12000, 10000, 11000, 9000]
+
+	     }, {
+	         type: 'column',
+	         color: '#03b100',
+	         name: 'Savings',
+	         data: [30000, 30000, 36000, 30000, 30000, 32000]
+
+	     }, {
+	         type: 'line',
+	         color: '#00beff',
+	         name: 'In Hand',
+	         data: [40000, 70000, 110000, 80000, 90000, 110000]
+
+	     }]
+	 });
+
+
+	 var colors = Highcharts.getOptions().colors,
+	     categories = ['Earnings', 'Expenses', 'Savings'],
+	     data = [{
+	         y: 125000,
+	         color: "#0066ff",
+	         drilldown: {
+	             name: 'Earnings',
+	             categories: ['Cottage Factory', 'Sugar Mill', 'Glass Factory', 'Claire Jam'],
+	             data: [20000, 25000, 40000, 40000],
+	             color: colors[0]
+	         }
+	     }, {
+	         y: 95000,
+	         color: "#df1700",
+	         drilldown: {
+	             name: 'Expenses All',
+	             categories: ['Rent', 'EMI', 'EMI PL', 'LIC', 'MUTUAL FUNDS'],
+	             data: [22000, 40000, 23000, 5000, 5000],
+	             color: colors[0]
+	         }
+	     }, {
+	         y: 30000,
+	         color: colors[1],
+	         drilldown: {
+	             name: 'Savings',
+	             categories: ['Total'],
+	             data: [30000],
+	             color: colors[1]
+	         }
+	     }],
+	     browserData = [],
+	     versionsData = [],
+	     i,
+	     j,
+	     dataLen = data.length,
+	     drillDataLen,
+	     brightness;
+
+
+	  // Build the data arrays
+	 for (i = 0; i < dataLen; i += 1) {
+
+	     // add browser data
+	     browserData.push({
+	         name: categories[i],
+	         y: data[i].y,
+	         color: data[i].color
+	     });
+
+	     // add version data
+	     drillDataLen = data[i].drilldown.data.length;
+	     for (j = 0; j < drillDataLen; j += 1) {
+	         brightness = 0.2 - (j / drillDataLen) / 5;
+	         versionsData.push({
+	             name: data[i].drilldown.categories[j],
+	             y: data[i].drilldown.data[j],
+	             color: Highcharts.Color(data[i].color).brighten(brightness).get()
+	         });
+	     }
+	 }
+
+	  // Create the chart
+	 $('#monthly-pie1').highcharts({
+	     chart: {
+	         type: 'pie'
+	     },
+	     title: {
+	         text: 'Report - JAN - 2015'
+	     },
+	     yAxis: {
+	         title: {
+	             text: 'Expense break down'
+	         }
+	     },
+	     plotOptions: {
+	         pie: {
+	             shadow: false,
+	             center: ['50%', '50%']
+	         }
+	     },
+	     tooltip: {
+	         valueSuffix: '$'
+	     },
+	     series: [{
+	         name: 'Total Expense',
+	         data: browserData,
+	         size: '60%',
+	         dataLabels: {
+	             formatter: function() {
+	                 return this.y > 5 ? this.point.name : null;
+	             },
+	             color: 'white',
+	             distance: -30
+	         }
+	     }, {
+	         name: 'Breakup',
+	         data: versionsData,
+	         size: '80%',
+	         innerSize: '60%',
+	         dataLabels: {
+	             formatter: function() {
+	                 // display only if larger than 1
+	                 return this.y > 1 ? '<b>' + this.point.name + ':</b> $' + this.y + '' : null;
+	             }
+	         }
+	     }]
+	 });
+
+	$("#monthly-bar1").highcharts({
+	     chart: {
+	         // type: 'column',
+	         // width:600
+	     },
+	     title: {
+	         text: 'Jan-2015'
+	     },
+	     /* subtitle: {
+            text: 'Source: WorldClimate.com'
+        },*/
+	     xAxis: {
+	         categories: [
+	             'Jan'
+	         ]
+	     },
+	     yAxis: {
+	         min: 0,
+	         title: {
+	             text: 'Expenses'
+	         }
+	     },
+	     tooltip: {
+	         headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+	         pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+	             '<td style="padding:0"><b>&#8377;{point.y}</b></td></tr>',
+	         footerFormat: '</table>',
+	         shared: true,
+	         useHTML: true
+	     },
+	     plotOptions: {
+	         column: {
+	             pointPadding: 0.2,
+	             borderWidth: 0
+	         }
+	     },
+	     series: [{
+	         type: 'column',
+	         name: 'Rent',
+	         data: [12000]
+
+	     }, {
+	         type: 'column',
+	         name: 'EMI',
+	         data: [20000]
+
+	     }, {
+	         type: 'column',
+	         name: 'EMI PL',
+	         data: [10000]
+
+	     }, {
+	         type: 'column',
+	         name: 'Monthly',
+	         data: [10000]
+
+	     }, {
+	         type: 'column',
+	         name: 'Furniture',
+	         data: [5000]
+
+	     },
+	     {
+	         type: 'column',
+	         name: 'Rent',
+	         data: [12000]
+
+	     }, {
+	         type: 'column',
+	         name: 'EMI',
+	         data: [20000]
+
+	     }, {
+	         type: 'column',
+	         name: 'EMI PL',
+	         data: [10000]
+
+	     }, {
+	         type: 'column',
+	         name: 'Monthly',
+	         data: [10000]
+
+	     }, {
+	         type: 'column',
+	         name: 'Furniture',
+	         data: [5000]
+
+	     }]
+	 });
+</script>

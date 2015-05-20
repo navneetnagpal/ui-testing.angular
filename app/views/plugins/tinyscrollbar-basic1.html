@@ -1,0 +1,25 @@
+
+<div class="uniform-cnt sec-type-1">
+	<header>
+		<h1>Uniform Radio Buttons</h1>
+	</header>
+	<section class="viewport content">
+		<div class="form uniform">
+			<h1>Email Subscription</h1>
+			<label for="sub"><input type="radio"  name="sel"  id="sub"> Subscribe</label>
+			<label for="unsub"><input type="radio" checked="true" name="sel" id="unsub"> UnSubscribe</label>
+		</div>
+		<div class="form uniform">
+			<h1>Settings</h1>
+			<label for="daily"><input type="checkbox"   id="daily"> Daily</label>
+			<label for="weekly"><input type="checkbox"   id="weekly"> Weekly</label>
+			<label for="monthly"><input type="checkbox"  id="monthly"> Monthly</label>
+		</div>
+	</section>
+</div>
+ 
+
+<script>
+	$(".form input").uniform();
+
+</script>

@@ -1,0 +1,61 @@
+.uniform div.selector,
+.uniform div.selector span,
+.uniform div.checker span,
+.uniform div.radio span,
+.uniform div.uploader,
+.uniform div.uploader span.action,
+.uniform div.button,
+.uniform div.button span {
+    background-image: url("/@{mainSprite}");
+    background-repeat: no-repeat;
+}
+
+.uniform{
+	div{
+		&.radio {
+			
+			&.focus span, &:hover span {
+				background-position: -2px -6px; 
+				&.checked {
+					background-position: -2px -36px;					
+				}				
+			}
+			
+			span {
+				background-position: -2px -6px;
+				&.checked {
+					background-position: -2px -36px;					
+				}	
+				
+			}
+		}
+		&.checker{
+			
+			 &.focus span, &:hover span {
+				background-position: -29px -11px;
+				&.checked {
+					background-position: -29px -34px;					
+				}				
+			}
+			
+			span {
+				background-position: -29px -11px;
+				&.checked {
+					background-position: -29px -34px;					
+				}	
+			}
+		}
+	}
+}
+
+.uniform-cnt {
+	background:#3D3D3D;
+	label {
+		color:#e2e2e2;
+	}
+	h1,h2,h3 {
+		color:#727272;
+		margin-top: 10px;
+	}
+	padding: 18px;
+}

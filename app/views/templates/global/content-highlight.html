@@ -1,0 +1,14 @@
+<div class="caption" title="{{item.title}}">
+	{{item.title}}
+</div>
+<div class="sub-caption" title="{{item.sub_title}}">
+	{{item.sub_title}}
+</div>
+<div class="description">
+	
+	{{item.description}}
+</div>
+<div class="actions">
+	<a ng-if="item.link" ui-sref="{{item.link}}">{{item.link_name}}</a>
+	<a ng-if="item.link_similar" ui-sref="{{item.link_similar}}">{{item.link_similar_name}}</a>
+</div>

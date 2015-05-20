@@ -1,0 +1,46 @@
+
+
+div.bg-animation {
+    -webkit-animation: bg_1_animation 5s; /* Chrome, Safari, Opera */
+    animation: bg_1_animation 5s;
+    height: 100px;
+    width: 100px;
+    background:yellow;
+}
+
+.ui-btn-type-1 {
+	&:hover {
+    	-webkit-animation: btn_animation 1s; /* Chrome, Safari, Opera */
+    	animation: btn_animation 1s;
+    	background: #6395E4;
+    	color:black;
+	}
+	background:#003993;
+	padding: 4px 10px;
+	color:white;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes btn_animation {
+    from {background: #003993;}
+    to {background: #6395E4;}
+}
+
+/* Standard syntax */
+@keyframes btn_animation {
+    from {background: #003993;}
+    to {background: #6395E4;}
+}
+
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes bg_1_animation {
+    from {background: red;}
+    to {background: yellow;}
+}
+
+/* Standard syntax */
+@keyframes bg_1_animation {
+    from {background: red;}
+    to {background: yellow;}
+}

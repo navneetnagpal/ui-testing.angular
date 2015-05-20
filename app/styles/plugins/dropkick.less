@@ -1,0 +1,256 @@
+
+/***** Begin Theme, feel free to edit in here! ******/
+
+/* One container to bind them... */
+.dk_container {
+    font-family: 'UniversLTW01-57Condense 723821', arial, sans-serif;
+    font-size: 13px;
+    line-height: 16px;
+    background-clip: border-box;
+    background: url("/@{mainSprite}") no-repeat right 0;
+}
+.dk_container:focus {
+    outline: 0;
+}
+.dk_container a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #333;
+    font-family: 'UniversLTW01-57Condense 723821',Arial,sans-serif;
+    span.dk_label {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		max-width: 90%;
+		display: inline-block;
+	}
+}
+
+/* Opens the dropdown and holds the menu label */
+.dk_toggle {
+    /**
+     * Help: Arrow image not appearing
+     * Try updating this property to your correct dk_arrows.png path
+     */
+    color: #333;
+    padding: 5px 5px 5px 10px;
+    background-image: url("/@{mainSprite}");
+    background-repeat: no-repeat;
+    background-position: 0 -49px;
+}
+
+/* Applied whenever the dropdown is open */
+.dk_open {
+    /**
+     * Help: Dropdown menu is covered by something
+     * Try setting this value higher
+     */
+    z-index: 10;
+    *z-index:10;
+}
+
+/* The outer container of the options */
+.dk_options .dropdownBorder{
+    border: 1px solid black;
+    border-bottom: 1px solid black;
+}
+.dk_options .tinyscrollbar{
+    width: auto;
+    margin: 2px 0 0 0;
+    clear: both;
+}
+.dk_options .tinyscrollbar .scrollbar{
+    background-color: #3D4148;
+    width: 21px;
+    height: 203px !important;    
+}
+.dk_options .tinyscrollbar .viewport{
+    width: auto;
+    height: 203px;
+}
+.dk_options .tinyscrollbar .overview{
+    width: 100%;
+}
+.dk_options .tinyscrollbar .track{
+    background-color: #ffffff;
+    width: 1px;
+    margin-top: 7px;
+    padding-left: 0;
+    padding-right: 0;
+    cursor: pointer;
+    z-index:100;
+}
+.dk_options .tinyscrollbar .thumb,
+.dk_options .tinyscrollbar .thumb .end{
+    background-color: #ffffff;
+    margin-left: -4px;
+    width: 9px;
+}
+
+.dk_options a {
+    background-color: #fff;
+    border-bottom: 1px solid #d6d6d6;
+    padding: 9px 10px 8px 9px;
+    font-family: 'UniversLTW01-57Condense 723821',Arial,sans-serif;
+}
+.dk_options li:last-child a {
+    border-bottom: none;
+}
+.no-touch {
+	.dk_options a:hover,
+	.dk_options a.hover {
+	    background-color: #d6d6d6;
+	}
+}
+
+/* Inner container for options, this is what makes the scrollbar possible. */
+.dk_options_inner {
+    border: 1px solid #5e6571;
+    border-bottom-width: 2px;
+    color: #333;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/******  End Theme ******/
+
+/******Added to enable disbling feature in DD ******/
+.dd-disable {
+	opacity: 0.4;
+}
+
+.dd-disable a {
+	cursor: default ! important;
+}
+
+.dk_container {
+    display: none;
+    float: left;
+    position: relative;
+    background: url("/@{dropkickSprite}") no-repeat right 0;
+}
+.dk_container a {
+    outline: none;
+}
+
+.dk_toggle {
+    display: -moz-inline-stack;
+    display: inline-block;
+    *display: inline;
+    position: relative;
+    zoom: 1;
+    background-image: url("/@{dropkickSprite}");
+    background-repeat: no-repeat;
+    background-position: 0 -49px;
+}
+
+.dk_open {
+    position: relative;
+}
+.dk_open .dk_options {
+    display: block;
+}
+.dk_open .dk_label {
+    color: inherit;
+}
+
+.dk_options {
+    display: none;
+    margin-top: -1px;
+    position: absolute;
+    right: 0;
+    width: 100%;
+}
+.dk_options a,
+.dk_options a:link,
+.dk_options a:visited {
+    display: block;
+}
+.dk_options_inner {
+    overflow: hidden;
+    position: relative;
+}
+
+.dk_touch .dk_options {
+    overflow: hidden;
+}
+
+.dk_touch .dk_options_inner {
+    overflow: visible;
+}
+
+.dk_fouc .dk_container select {
+    position: relative;
+    top: -99999em;
+    visibility: hidden;
+}
+/***** End Critical to the continued enjoyment of working dropdowns ******/
+
+/* Dark theme */
+.dk_theme_dark.dk_container {
+    background-image: none;
+}
+.dk_theme_dark .dk_toggle {
+    height: 24px;
+    line-height: 24px;
+    padding: 0 5px 0 9px;
+    color: #fff;
+    background: transparent url("/@{dropkickSpriteDark}") no-repeat right top;
+}
+.dk_theme_dark .dk_options_inner {
+    overflow-x: hidden;
+    border: none;
+}
+.dk_theme_dark .dk_options a {
+    background: #3d4148;
+    color: #fff;
+    border-color: #6e7176;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    text-align: left;
+    font-family: 'UniversLTW01-57Condense 723821',Arial,sans-serif;
+}
+.no-touch {
+    .dk_theme_dark .dk_options a:hover,
+    .dk_theme_dark .dk_options a.hover {
+        background-color: #5a5d63;
+        color: #fff;
+    }
+}
+/*To Over ride the first child color of dropkick at individual page level*/
+.manager_funds #dk_container_fundPageList .dk_options li:first-child a,
+#search header form.filter #selectSort .dk_container .dk_options li:first-child a,
+.playlist-wrap .top-bar #dk_container_sort .dk_options_inner li:first-child a,
+.playlist-wrap .top-bar #dk_container_plist-sort .dk_options_inner li:first-child a,
+body.workspace.landing #portfolio .inner_summary .dk_options_inner li:first-child a,
+body.workspace.landing #portfolio .outer_summary .dk_options_inner li:first-child a,
+.library.full_view_box .filter_form .dk_container .dk_options_inner li:first-child a,
+.dropbox.full_view_box .filter_form .dk_container .dk_options_inner li:first-child a,
+.library.full_view_box .filter_form .dk_container .dk_options_inner li:first-child a,
+.dropbox.full_view_box .filter_form .dk_container .dk_options_inner li:first-child a,
+body.sol_profile #timelineView .dk_container .dk_options_inner li:first-child a,
+body.managerandfund #filters-wrap #dk_container_assetclass .dk_options li:first-child a,
+body.sol_profile #funds #dk_container_fund-listing .dk_options li:first-child a{
+    color: #fff;
+}
+.dk_theme_dark .dk_options li:last-child a,
+.dk_theme_dark .dk_options li.slvzr-last-child a{
+    border-bottom: none;
+}
+
+/* To enable selected Asset class to show in a different color for manager and fund landing page */
+.dk_options .dk_options_inner li.dk_option_current a {
+    color: #8D8D8D !important;
+}
+
+/*****************Ipad Fixes*********************/
+.ipad .dk_options .tinyscrollbar .thumb .end{
+	margin-left: 0;
+}
+
+.landscape.workspace.mylibrary .sort-options .dk_container{
+  top:0;
+  left:3px;
+}

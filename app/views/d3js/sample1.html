@@ -1,0 +1,28 @@
+<div class="dark-theme-cnt">
+	<h1>Sample 1</h1>
+	<div class="content">
+		<p>Text p 1</p>
+		<p>Text p 2</p>
+		<p>Text p 3</p>
+		<p>Text p 4</p>
+		<p>Text p 5</p>
+		<p>Text p 6</p>
+	</div>
+</div>
+
+<script type="text/javascript">
+	d3.selectAll("p").style("color", function(d, i) {
+	    return i % 2 ? "#fff" : "#eee";
+	});
+	d3.selectAll("p")
+    .data([4, 8, 15, 16, 23, 42])
+    .style("font-size", function(d) { return d + "px"; });
+
+    d3.select("body").transition()
+    .style("background-color", "black");
+
+    d3.selectAll("circle").transition()
+    .duration(750)
+    .delay(function(d, i) { return i * 10; })
+    .attr("r", function(d) { return Math.sqrt(d * scale); });
+</script>

@@ -3,8 +3,13 @@ body.ui-testing-body {
 	font-size: 15px;
 	font-weight: 300;
 }
+.app {
+	margin-top: 50px;
+}
 // all the sections of page
-.sec-type-1 {
+.sec-type-1, section.default {
+	min-height: 600px;
+	padding-top: 30px;
 	header {
 		h1 {
 			&:before {
@@ -17,7 +22,7 @@ body.ui-testing-body {
 			}
 			font-weight: 700;
 			font-size: 20px;
-			color:rgb(17, 76, 120);
+			color: #B5B5B5;
 			border-bottom: solid 1px #a0a0a0;
 			padding: 10px 0px;
 		}
@@ -26,9 +31,9 @@ body.ui-testing-body {
 		.title {
 			font-weight: 700;
 			font-size: 16px;
-			color:rgb(17, 76, 120); 
+			color: #B5B5B5;
 			padding: 5px 0px;
 		}
-		padding:10px 0px;
+		padding: 10px 0px;
 	}
 }

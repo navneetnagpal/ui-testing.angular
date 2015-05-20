@@ -1,2 +1,40 @@
-
-<h1>Home page</h1>
+<div class="home sec-page container-fluid">
+	<section class="default clearfix">
+	<header>
+		<h1>
+		Recently Updated Samples</h1>
+	</header>
+	<section class="content">
+		<div class="col-md-12">
+			<div class="row">
+				<div class="content-highlight {{item.type}}" content-highlight="" item="item" ng-repeat="item in recentUpdates">
+					
+				</div>
+				
+			</div>
+		</div>
+	</section>
+</section>
+<section class="default clearfix">
+	<header>
+		<h1>
+		Most Popuplar</h1>
+	</header>
+	<section class="content">
+		<div class="content-highlight {{item.type}}" content-highlight="" item="item" ng-repeat="item in mostPopular">
+			
+		</div>
+	</section>
+</section>
+<section class="default clearfix">
+	<header>
+		<h1>
+		Visualization Updates</h1>
+	</header>
+	<section class="content">
+		<div class="content-highlight {{item.type}}"  content-highlight="" item="item" ng-repeat="item in vizUpdates">
+			
+		</div>
+	</section>
+</section>
+</div>

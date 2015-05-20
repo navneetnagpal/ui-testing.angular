@@ -39,9 +39,24 @@ angular.module('uiTestingangularApp', [
                 .state('editorgrid', {
                     url: '/editorgrid',
                     templateUrl: 'views/extjs/editor-grid.html'
-                }).state('html', {
-                    url: '/html',
-                    templateUrl: 'views/htmlcss/html.html'
+                })
+                .state('html', {
+                    url: '/html/:type',
+                    templateUrl: function($stateParams) {
+                        return 'views/htmlcss/' + $stateParams.type + '.html';
+                    }
+                })
+                 .state('d3js', {
+                    url: '/d3js/:type',
+                    templateUrl: function($stateParams) {
+                        return 'views/d3js/' + $stateParams.type + '.html';
+                    }
+                })
+                .state('pluginssamples', {
+                    url: '/pluginssamples/:page',
+                    templateUrl: function($stateParams) {
+                        return 'views/plugins/' + $stateParams.page + '.html';
+                    }
                 })
                 .state('bsimagegallary', {
                     url: '/bsimagegallary',
@@ -53,10 +68,15 @@ angular.module('uiTestingangularApp', [
                 })
                 .state('simplehighchart', {
                     url: '/simplehighchart/:type',
-                    templateUrl:function($stateParams){ 
-                        return 'views/highcharts/simple-'+ $stateParams.type+'-chart.html';
-                    } //'views/highcharts/simplebarchart.html'
+                    templateUrl: function($stateParams) {
+                        return 'views/highcharts/simple-' + $stateParams.type + '-chart.html';
+                    }
                 })
-                ;
+                .state('css3', {
+                    url: '/css3/:type',
+                    templateUrl: function($stateParams) {
+                        return 'views/css3/' + $stateParams.type + '.html';
+                    }
+                });
         }
     ]);
