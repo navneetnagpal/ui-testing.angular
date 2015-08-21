@@ -1,0 +1,88 @@
+ 
+@keyframes ani1 {
+	0% { background-position: 0 0; background-size: 110% 110%; }
+	50% { background-position: 100% 0; background-size: 120% 120%; }
+	100% { background-position: 0 0; background-size: 110% 110%; }
+} 
+
+.main-game-container {
+	.bg {
+		position:absolute;
+		width: 100%;
+		height: 700px;
+		overflow:hidden;
+		background: #1e5799; /* Old browsers */
+		background: -moz-linear-gradient(-45deg,  #1e5799 0%, #2989d8 0%, #7db9e8 48%, #7db9e8 48%, #207cca 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#1e5799), color-stop(0%,#2989d8), color-stop(48%,#7db9e8), color-stop(48%,#7db9e8), color-stop(100%,#207cca)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(-45deg,  #1e5799 0%,#2989d8 0%,#7db9e8 48%,#7db9e8 48%,#207cca 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(-45deg,  #1e5799 0%,#2989d8 0%,#7db9e8 48%,#7db9e8 48%,#207cca 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(-45deg,  #1e5799 0%,#2989d8 0%,#7db9e8 48%,#7db9e8 48%,#207cca 100%); /* IE10+ */
+		background: linear-gradient(135deg,  #1e5799 0%,#2989d8 0%,#7db9e8 48%,#7db9e8 48%,#207cca 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#207cca',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+		background-image: url('../../styles/css3/images/game-bg.jpg');
+		/* animation: moveAndZoom 20s linear infinite,moveAndZoomBack 20s linear infinite; */
+		 
+	    animation: ani1 10s  infinite; 
+	    background-size: 110% 110%; 
+	    -webkit-filter: blur(3px); 
+		filter: blur(3px);
+	}
+}
+
+
+.dragon-menu {
+	position: absolute;
+	margin: auto;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 130px;
+	width: 100%;
+	.menu-container {
+		position:relative;
+		display:block;
+		width:100%;
+		height: 130px;
+		overflow: hidden; 
+	}
+	.menu-list { 
+		position:absolute;
+		left:30%;
+		top:0;
+		width: 10000px;
+		  height: 100%;
+		list-style: none;
+	  	transition: left 0.5s ease;
+		> li {
+
+			&.active, &:hover {
+				.icon-menu {
+				  -webkit-filter:invert() drop-shadow(#9FFF00 6px 1px 6px);
+				}
+				opacity: 1;
+				cursor: auto;
+			}
+			opacity: .5;
+			cursor:pointer;
+			.icon-menu {
+				width: 72px;
+				height: 72px;
+				filter:invert();
+				  -webkit-filter: invert() ;
+			}
+			.menu-text {
+					color:#fff;
+ 					text-shadow: 0 0 3px #000;
+				  font-size: 28px;
+				  padding: 44px 10px;
+				  display: inline-block;
+				  text-decoration: none; 
+				  font-weight: bold;
+			}
+			float: left;
+			margin: 0 50px 0 0;
+			padding: 0;
+		}
+	}
+}

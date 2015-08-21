@@ -98,6 +98,11 @@
         "text": "Movie Titles",
         "link": "css3({type:'movie-titles'})",
         "icon": "icon glyphicon glyphicon-file"
+    },
+    {
+        "text": "Game Menu",
+        "link": "css3({type:'game-menu'})",
+        "icon": "icon glyphicon glyphicon-file"
     }]
 }, {
     "text": "High charts Samples",

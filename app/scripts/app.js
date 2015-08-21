@@ -15,8 +15,13 @@ angular.module('uiTestingangularApp', [
             $urlRouterProvider.otherwise('/');
             $stateProvider
                 .state('home', {
-                    url: '/',
+                    url: '/abc',
                     templateUrl: 'views/home.html',
+                    controller: "MainCtrl"
+                })
+                .state('home.create', {
+                    url: '/create',
+                    templateUrl: 'views/home.create.html',
                     controller: "MainCtrl"
                 })
                 .state('emicalc', {
