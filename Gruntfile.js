@@ -250,6 +250,7 @@ module.exports = function(grunt) {
             },
             e2e: {
                 options: {
+                    port: 9000,
                     open: false,
                     base: [
                         '.tmp',

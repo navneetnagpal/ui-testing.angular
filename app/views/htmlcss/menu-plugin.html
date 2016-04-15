@@ -1,23 +1,14 @@
-<section class="default">
-	<header class="default">
-		<h1>Menu Plugin</h1>
-	</header>
-	<section class="content">
+<section>
+	<form action="/action" enctype="json" method="POST" id="form" >
 		
-
-
-		<nav class="nn-nav-menu">
-			<div class="nav-header">
-				
-			</div>
-			<div class="nn-nav-collapse">
-				<ul class="menu-list">
-					<li><a href="#">Menu 1</a></li>
-					<li><a href="#">Menu 1</a></li>
-					<li><a href="#">Menu 1</a></li>
-				</ul>
-			</div>
-		</nav>
-
-	</section>
+		<input type="hidden" name="data" value="">
+		<input type="submit">
+	</form>
+	<script>
+	$("#form").on('click',function(){
+	$("#form").find('[name=data]').val(JSON.stringify({name:"john",lname:"miller"}));
+	$("#form").submit();
+	return false;
+	});
+	</script>
 </section>

@@ -1,23 +1,23 @@
  var EmiCalc = function() {
 
      var dom = {
-         container: by.css(".ui-app-view .emicalc") ,
+         container: by.css(".ui-app-view .emicalc-cnt") ,
          offers: {
             btnToggle:by.css('#availableOffers .btn.dropdown-toggle')
          },
          inputForm: {
-             loanAmount:  by.css(".ui-app-view .emicalc #loanAmount"),
-             roi: by.css(".ui-app-view .emicalc #roi"),
-             tenure: by.css(".ui-app-view .emicalc #tenure"),
+             loanAmount:  by.css(".ui-app-view .emicalc-cnt #loanAmount"),
+             roi: by.css(".ui-app-view .emicalc-cnt #roi"),
+             tenure: by.css(".ui-app-view .emicalc-cnt #tenure"),
              calculate: by.id('btnCalculate'),
              reset: by.id('btnReset')
          },
          scheduleTable: {
-            container:by.css(".ui-app-view .emicalc .schedule-table")
+            container:by.css(".ui-app-view .emicalc-cnt .schedule-table")
 
          },
          details: {
-            container:by.css(".ui-app-view .emicalc .details")
+            container:by.css(".ui-app-view .emicalc-cnt .details")
          }
      };
      return {

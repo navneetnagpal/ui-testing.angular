@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "dependencies": {
     "angular-ui-router": "~0.2.10",
+    "grunt-processhtml": "~0.3.3",
     "grunt-protractor-runner": "~1.1.0",
-    "grunt-processhtml": "~0.3.3"
+    "protractor": "^3.2.2"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
